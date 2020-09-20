@@ -48,13 +48,13 @@
           - git
 #          - python
     - name: clone git repo
-      shell: git clone https://github.com/lerndevops/labs.git
+      shell: git clone https://github.com/lerndevops/tse.git
       args:
         chdir: /tmp
         #- name: install kube
         #shell: chmod -R 755 /tmp/labs ; /tmp/labs/kube/install/install-k8s-ubuntu.sh 
     - name: create user
-      shell: chmod -R 755 /tmp/labs/* ; /tmp/labs/aws/setup-aws-user.sh 
+      shell: chmod -R 755 /tmp/tse/* ; /tmp/tse/setup-user.sh 
       register: outt
     - debug:
         var: outt
