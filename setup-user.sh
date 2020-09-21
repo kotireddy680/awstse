@@ -29,7 +29,7 @@ if [ $1 == "sles" ];then
         exp "/usr/bin/expect"
    fi
 
-elif [ $1 == "ubuntu" ];then
+elif [ $1 == "windows" ];then
    
    if [ ! -f /usr/bin/expect ] && [ ! -f /bin/expect ];then
         apt-get update
@@ -50,7 +50,7 @@ elif [ $1 == "amzn" ];then
         exp "/usr/bin/expect"
    fi
 
-elif [ $1 == "centos" ];then
+elif [ $1 == "windows" ];then
 
    echo $1
    if [ ! -f /usr/bin/expect ] && [ ! -f /bin/expect ];then
