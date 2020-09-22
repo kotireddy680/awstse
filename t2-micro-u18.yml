@@ -24,24 +24,24 @@
 	   description: Rules Allowing Traffic on for RDP, WinRM and Http
 	  region: "{{ aws_region """
 	  rules:
-	     - proto: tcp
+  - proto: tcp
 	       from_port:80
 	       to_port: 80
 	       cidr_ip: 0.0.0.0/0
-	      - proto: tcp
+  - proto: tcp
 		from_port: 3389
 		to_port: 3389
 		cidr_ip: 0.0.0.0/0
-	       -Proto: tcp
+   -Proto: tcp
 		from_port: 5986
 		to_port: 5986
 		cidr_ip: 0.0.0.0/0
-	      - proto: icmp
+   - proto: icmp
 	 	from_port: -1
 		to_port: -1
 		cidr_ip: 0.0.0.0/0
 	      rules_egress:
-		- proto: all
+  - proto: all
 		  cidr_ip: 0.0.0.0/0
   # this task spins a new ec2 windows instance 
   - name: provision an Ec2 windows Instance
@@ -57,7 +57,7 @@
  	 Owner: tse
 	 monitoring: no
 	 group: "{{ win_ec2_sec_group }}"
-	# below userdata is very important, as we enable winrm on new server, also ser the Administrator password
+# below userdata is very important, as we enable winrm on new server, also ser the Administrator password
        user_data: "{{ lookup( 'template', '/etc/ansible/ec2-windows/winrm-userdata.txt.j2') }}"
 	register: ec2_out
 
